@@ -44,7 +44,10 @@ class PatternsPage extends Component {
   static getDerivedStateFromProps(props, state) {
     console.log(props.history);
     return {
-      selected: props.history.location.pathname,
+      selected:
+        props.history.location.pathname === "/patterns"
+          ? "/patterns/compound"
+          : props.history.location.pathname,
     };
   }
 

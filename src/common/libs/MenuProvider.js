@@ -22,5 +22,11 @@ export const mainMenu = [
         name:"D3",
         icon:"Equalizer",
         path:"/data-viz"
+    },
+    {
+        id:"500",
+        name:"Covid 19",
+        icon:"AcUnit",
+        path:"/covid"
     }
 ]

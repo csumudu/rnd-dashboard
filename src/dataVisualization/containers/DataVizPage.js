@@ -59,6 +59,16 @@ class DataVizPage extends Component {
     selected: "/data-viz/basic",
   };
 
+  static getDerivedStateFromProps(props, state) {
+    console.log(props.history);
+    return {
+      selected:
+        props.history.location.pathname === "/data-viz"
+          ? "/data-viz/basic"
+          : props.history.location.pathname,
+    };
+  }
+
   clickHaandler = (path) => {
     this.setState({ selected: path });
     this.props.history.push(path);

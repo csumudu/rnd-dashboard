@@ -26,6 +26,7 @@ import DashboardPage from "./dashboard/containers/DashboardPage";
 import CategoriesPage from "./categories/containers/CategoriesPage";
 import PatternsPage from "./patterns/containers/PatternsPage";
 import DataVizPage from "./dataVisualization/containers/DataVizPage";
+import CovidDashboard from "./covid/containers/CovidDashboard";
 
 function App() {
   const classes = appStyles();
@@ -104,7 +105,10 @@ function App() {
             <Route path="/data-viz">
               <DataVizPage />
             </Route>
-            <Route path="/">
+            <Route path="/covid">
+              <CovidDashboard />
+            </Route>
+            <Route exact path="/">
               <DashboardPage />
             </Route>
           </Switch>

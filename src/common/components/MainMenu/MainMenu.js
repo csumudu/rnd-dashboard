@@ -6,7 +6,8 @@ import { mainMenu } from "../../libs/MenuProvider";
 import Icon from "@material-ui/core/Icon";
 import ThreeDRotation from "@material-ui/icons/ThreeDRotation";
 import IconLoader from "../AsyncIcon/AsyncIconLoader";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import "./MainMenu.scss";
 
 export class MainMenu extends Component {
   state = {
@@ -30,23 +31,25 @@ export class MainMenu extends Component {
 
   render() {
     return (
-      <div>
+      <div className="menu-container">
         {this.state.menu.map((m) => {
           return (
-            <Link
+            <NavLink
+              exact
               className="nav-lnk"
+              activeClassName="selected-link"
               to={m.path}
               key={m.id}
               style={{ textDecoration: "none", color: "inherit" }}
             >
-              <ListItem button>
+              <ListItem button selected={this.state.selected === m.path}>
                 <ListItemIcon>
                   <IconLoader icon={m.icon} />
                 </ListItemIcon>
 
                 <ListItemText primary={m.name} />
               </ListItem>
-            </Link>
+            </NavLink>
           );
         })}
       </div>

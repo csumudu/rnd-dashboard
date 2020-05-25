@@ -1,0 +1,13 @@
+.menu-container {
+  a.selected-link {
+    span {
+      color: white;
+    }
+    .MuiListItem-button {
+      background-color: #556cd6;
+      svg {
+        fill: white;
+      }
+    }
+  }
+}
